@@ -1,0 +1,20 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: go-team-dev
+  namespace: dev
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/chart-image: glob:dev-*
+spec:
+  releaseName: go-team-dev
+  chart:
+    git: git@github.com:cbellee/flux-manifests
+    path: charts/go-team
+    ref: dev
+  values:
+    image: cbellee/go-team:dev-0.1.0.2972
+    replicaCount: 1
+    hpa:
+      enabled: false
