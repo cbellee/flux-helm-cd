@@ -14,7 +14,7 @@ spec:
     path: charts/go-team
     ref: master
   values:
-    image: cbellee/go-team:dev-0.1.0.2972
+    image: acrd8f374.azurecr.io/cbellee/go-team:dev-0.1.0.2972
     replicaCount: 1
     hpa:
       enabled: false
