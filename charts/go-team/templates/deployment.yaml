@@ -24,8 +24,8 @@ spec:
         release: {{ .Release.Name }}
     spec:
       containers:
-      - image: {{ .Values.image.repository }}/{{ .Values.image.name }}:{{ .Values.image.env }}-{{ .Values.image.tag }}
-        name: {{ .Chart.Name }}
+      - name: {{ .Chart.Name }}
+        image: {{ .Values.image.repository }}/{{ .Values.image.name }}:{{ .Values.image.env }}-{{ .Values.image.tag }}
         imagePullPolicy: {{ .Values.image.pullPolicy }}
       imagePullSecrets:
         - name: {{ .Values.env.acrCredSecretName }}
