@@ -12,7 +12,7 @@ spec:
   chart:
     git: git@github.com:cbellee/flux-manifests
     path: charts/go-team
-    ref: dev
+    ref: master
   values:
     image: cbellee/go-team:dev-0.1.0.2972
     replicaCount: 1
