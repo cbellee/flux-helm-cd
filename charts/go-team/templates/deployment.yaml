@@ -23,25 +23,25 @@ spec:
         app: {{ .Release.Name }}
         release: {{ .Release.Name }}
     spec:
+      imagePullSecrets:
+      - name: {{ .Values.env.acrCredSecretName }}
       containers:
       - name: {{ .Chart.Name }}
         image: "{{ .Values.image }}:{{ .Values.tag }}"
         imagePullPolicy: {{ .Values.pullPolicy }}
-      imagePullSecrets:
-      - name: {{ .Values.env.acrCredSecretName }}
-      env:
-      - name: DB_NAME
-        value: {{ .Values.env.dbName }}
-      - name: DB_USER_NAME
-        valueFrom:
-          secretKeyRef:
-            name: {{ .Values.env.dbSecretName }}
-            key: user
-      - name: DB_PASSWORD
-        valueFrom:
-          secretKeyRef:
-            name: {{ .Values.env.dbSecretName }}
-            key: password 
-      - name: DB_HOST_NAME
-        value: {{ .Values.env.dbHostName }}
+        env:
+        - name: DB_NAME
+          value: {{ .Values.env.dbName }}
+        - name: DB_USER_NAME
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.env.dbSecretName }}
+              key: user
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.env.dbSecretName }}
+              key: password 
+        - name: DB_HOST_NAME
+          value: {{ .Values.env.dbHostName }}
         resources: {}
