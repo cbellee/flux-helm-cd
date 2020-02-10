@@ -1,0 +1,66 @@
+# Default values for go-team.
+
+replicaCount: 1
+
+image: acrd8f374.azurecr.io/cbellee/go-team
+tag: dev-0.1.0.2972
+pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  externalPort: 9080
+  containerPort: 8080
+  nodePort: 31180
+
+hpa:
+  enabled: false
+  maxReplicas: 10
+  # average total CPU usage per pod (1-100)
+  cpu:
+  # average memory usage per pod (100Mi-1Gi)
+  memory:
+
+env:
+  dbHostName: dev-go-team-mysql.mysql.database.azure.com
+  dbSecretName: mysql-db-auth
+  dbName: goteamdb
+  acrCredSecretName: regcred
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext:
+  # capabilities:
+  #   drop:
+  #   - ALL
+  readOnlyRootFilesystem: true
+  runAsNonRoot: true
+  runAsUser: 1000
+
+ingress:
+  enabled: false
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: go-team.local
+      paths: []
+  tls: []
+
+resources:
+  limits:
+  cpu: 100m
+  memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

@@ -1,0 +1,11 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: go-team-config
+  namespace: dev
+data:
+  db.properties: /
+    name=goteamdb
+    port=3907
+
+  

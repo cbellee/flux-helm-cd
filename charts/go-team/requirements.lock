@@ -1,0 +1,6 @@
+dependencies:
+- name: go-config
+  repository: file://../go-config
+  version: 0.1.0
+digest: sha256:3e5063e7f129db4afb021e9ebc15e20dbc24974be2cf3dd2d7c2f7859d95701e
+generated: "2020-02-11T05:31:37.3334121+11:00"

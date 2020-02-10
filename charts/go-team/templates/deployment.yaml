@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+  labels:
+    app: {{ .Release.Name }}
+    chart: {{ .Chart.Name }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}
+      release: {{ .Release.Name }}
+  template:
+    metadata:
+      annotations:
+          prometheus.io/scrape: 'true'
+          prometheus.io/path: '/metrics'
+          prometheus.io/port: '8080'
+      labels:
+        app: {{ .Release.Name }}
+        release: {{ .Release.Name }}
+    spec:
+      imagePullSecrets:
+      - name: {{ .Values.env.acrCredSecretName }}
+      containers:
+      - name: {{ .Chart.Name }}
+        image: "{{ .Values.image }}:{{ .Values.tag }}"
+        imagePullPolicy: {{ .Values.pullPolicy }}
+        env:
+        - name: DB_NAME
+          value: {{ .Values.env.dbName }}
+        - name: DB_USER_NAME
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.env.dbSecretName }}
+              key: user
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.env.dbSecretName }}
+              key: password 
+        - name: DB_HOST_NAME
+          value: {{ .Values.env.dbHostName }}
+        resources: {}
