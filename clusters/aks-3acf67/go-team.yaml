@@ -2,14 +2,14 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: go-config-dev
+  name: go-team-dev
   namespace: dev
   annotations:
     fluxcd.io/automated: "true"
     filter.fluxcd.io/chart-image: glob:dev-*
 spec:
-  releaseName: go-config-dev
+  releaseName: go-team-dev
   chart:
     git: git@github.com:cbellee/flux-helm-cd
-    path: charts/go-config
+    path: charts/go-team
     ref: master
