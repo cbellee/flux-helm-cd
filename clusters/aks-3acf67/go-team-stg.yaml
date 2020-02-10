@@ -1,0 +1,15 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: go-team-stg
+  namespace: stg
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/chart-image: glob:dev-*
+spec:
+  releaseName: go-team-stg
+  chart:
+    git: git@github.com:cbellee/flux-helm-cd
+    path: charts/go-team
+    ref: master
