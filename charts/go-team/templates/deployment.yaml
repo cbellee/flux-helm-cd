@@ -36,12 +36,12 @@ spec:
           valueFrom:
             secretKeyRef:
               name: {{ .Values.env.dbSecretName }}
-              key: user
+              key: mysqlUser
         - name: DB_PASSWORD
           valueFrom:
             secretKeyRef:
               name: {{ .Values.env.dbSecretName }}
-              key: password 
+              key: mysqlPassword
         - name: DB_HOST_NAME
           value: {{ .Values.env.dbHostName }}
         resources: {}
