@@ -2,5 +2,8 @@ dependencies:
 - name: go-config
   repository: file://../go-config
   version: 0.1.0
-digest: sha256:3e5063e7f129db4afb021e9ebc15e20dbc24974be2cf3dd2d7c2f7859d95701e
-generated: "2020-02-11T05:31:37.3334121+11:00"
+- name: mysql
+  repository: https://kubernetes-charts.storage.googleapis.com/
+  version: 1.6.2
+digest: sha256:ad66dae1443acacff6bd0899c50ef29ddf87d3790f620ae355fa362970485aa2
+generated: "2020-02-12T12:20:56.0761459+11:00"
