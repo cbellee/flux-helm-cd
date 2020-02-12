@@ -21,7 +21,7 @@ hpa:
   memory:
 
 env:
-  dbHostName: dev-go-team-mysql.mysql.database.azure.com
+  dbHostName: mysql #dev-go-team-mysql.mysql.database.azure.com
   dbSecretName: mysql-db-auth
   dbName: goteamdb
   acrCredSecretName: regcred
