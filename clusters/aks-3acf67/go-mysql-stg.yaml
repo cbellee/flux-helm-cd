@@ -2,13 +2,13 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: go-mysql-dev
+  name: go-mysql-stg
   namespace: stg
   annotations:
     fluxcd.io/automated: "true"
     filter.fluxcd.io/chart-image: glob:dev-*
 spec:
-  releaseName: go-mysql-dev
+  releaseName: go-mysql-stg
   chart:
     repository: https://kubernetes-charts.storage.googleapis.com/
     name: mysql
