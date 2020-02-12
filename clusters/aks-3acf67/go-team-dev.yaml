@@ -13,3 +13,5 @@ spec:
     git: git@github.com:cbellee/flux-helm-cd
     path: charts/go-team
     ref: master
+values:
+  env.dbName: go-team-dev-mysql
