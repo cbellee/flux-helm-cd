@@ -1,0 +1,9 @@
+apiVersion: v1
+data:
+  mysqlPassword: TTFjcjBzb2Z0MTIzNDU2Nzg5MA==
+  mysqlRootPassword: TTFjcjBzb2Z0MTIzNDU2Nzg5MA==
+  mysqlUser: ZGJhZG1pbkBkZXYtZ28tdGVhbS1teXNxbA==
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: mysql-db-auth

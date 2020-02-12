@@ -1,2 +1,2 @@
-kubectl -n stg create secret generic mysql-db-auth --dry-run --from-literal=mysqlRootPassword=M1cr0soft1234567890 --from-literal=mysqlPassword=M1cr0soft1234567890 --from-literal=mysqlUser=dbadmin@dev-go-team-mysql -o yaml > mysql-db-auth-redacted.yaml
-kubeseal --cert=./certs/cert.pem --controller-name=sealed-secrets --controller-namespace=kube-system --format yaml < mysql-db-auth-redacted.yaml > mysealedsecret.yaml
+kubectl create secret generic mysql-db-auth --dry-run --from-literal=mysqlRootPassword=M1cr0soft1234567890 --from-literal=mysqlPassword=M1cr0soft1234567890 --from-literal=mysqlUser=dbadmin@dev-go-team-mysql -o yaml > mysql-db-auth-redacted.yaml
+kubeseal --cert=./certs/kubeseal-public-cert.pem --controller-name=sealed-secrets --controller-namespace=kube-system --format yaml < mysql-db-auth-redacted.yaml > mysealedsecret.yaml
