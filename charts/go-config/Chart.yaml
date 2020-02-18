@@ -10,3 +10,7 @@ maintainers:
     - name: cbellee
       email: 8634922+cbellee@users.noreply.github.com
 engine: gotpl
+dependencies:
+  - name: sealed-secrets
+    version: 1.7.6
+    repository: https://kubernetes-charts.storage.googleapis.com/
