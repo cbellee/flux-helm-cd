@@ -7,5 +7,3 @@ kind: Secret
 metadata:
   creationTimestamp: null
   name: mysql-db-auth
-  annotations:
-    sealedsecrets.bitnami.com/namespace-wide: "true"
