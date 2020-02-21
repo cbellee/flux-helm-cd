@@ -23,10 +23,6 @@ spec:
         app: {{ .Release.Name }}
         release: {{ .Release.Name }}
     spec:
-{{- /*
-       imagePullSecrets:
-      - name: {{ .Values.env.acrCredSecretName }} 
-*/ -}}
       containers:
       - name: {{ .Chart.Name }}
         image: "{{ .Values.image }}:{{ .Values.tag }}"
