@@ -33,13 +33,13 @@ spec:
         - name: DB_USER_NAME
           valueFrom:
             secretKeyRef:
-              name: {{ .Values.env.dbSecretName }}
+              name: {{ .Values.dbSecretName }}
               key: mysqlUser
         - name: DB_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: {{ .Values.env.dbSecretName }}
+              name: {{ .Values.dbSecretName }}
               key: mysqlPassword
         - name: DB_HOST_NAME
-          value: {{ .Values.env.dbHostName }}
+          value: {{ .Values.dbHostName }}
         resources: {}
