@@ -29,7 +29,7 @@ spec:
         imagePullPolicy: {{ .Values.pullPolicy }}
         env:
         - name: DB_NAME
-          value: {{ .Values.env.dbName }}
+          value: {{ .Values.dbName }}
         - name: DB_USER_NAME
           valueFrom:
             secretKeyRef:
