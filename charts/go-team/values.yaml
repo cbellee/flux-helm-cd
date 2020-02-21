@@ -20,7 +20,7 @@ hpa:
   # average memory usage per pod (100Mi-1Gi)
   memory:
 
-dbHostName: mysql #dev-go-team-mysql.mysql.database.azure.com
+dbHostName: dev-go-team-mysql.mysql.database.azure.com
 dbSecretName: mysql-auth
 dbName: goteamdb
   #acrCredSecretName: regcred
