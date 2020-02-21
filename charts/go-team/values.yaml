@@ -22,9 +22,9 @@ hpa:
 
 env:
   dbHostName: mysql #dev-go-team-mysql.mysql.database.azure.com
-  dbSecretName: mysql-db-auth
+  dbSecretName: mysql-auth
   dbName: goteamdb
-  acrCredSecretName: regcred
+  #acrCredSecretName: regcred
 
 imagePullSecrets: []
 nameOverride: ""

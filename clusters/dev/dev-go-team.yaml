@@ -1,0 +1,17 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: dev-go-team
+  namespace: dev
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/chart-image: glob:dev-*
+spec:
+  releaseName: dev-go-team
+  chart:
+    git: git@github.com:cbellee/flux-helm-cd
+    path: charts/go-team
+    ref: master
+values:
+  env.dbName: dev-goteamdb
