@@ -22,3 +22,4 @@ values:
     hosts:
       - host: go-team.kainiindustries.net
         paths: []
+    tls: []
