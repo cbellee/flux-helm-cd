@@ -13,8 +13,8 @@ spec:
     git: git@github.com:cbellee/flux-helm-cd
     path: charts/go-team
     ref: master
-values:
-  image: 
-    repository: acrd8f374.azurecr.io/cbellee/go-team
-    tag: dev-0.1.0.2972
-  dbHostName: dev-go-team-mysql
+  values:
+    image: 
+      repository: acrd8f374.azurecr.io/cbellee/go-team
+      tag: dev-0.1.0.2972
+    dbHostName: dev-go-team-mysql
