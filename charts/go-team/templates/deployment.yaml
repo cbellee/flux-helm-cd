@@ -30,22 +30,22 @@ spec:
         release: {{ .Release.Name }}
     spec:
       containers:
-      - name: {{ .Chart.Name }}
-        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-        imagePullPolicy: {{ .Values.image.pullPolicy }}
-        env:
-        - name: DB_NAME
-          value: {{ .Values.dbName }}
-        - name: DB_USER_NAME
-          valueFrom:
-            secretKeyRef:
-              name: {{ .Values.dbSecretName }}
-              key: mysqlUser
-        - name: DB_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: {{ .Values.dbSecretName }}
-              key: mysqlPassword
-        - name: DB_HOST_NAME
-          value: {{ .Values.dbHostName }}
-        resources: {}
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+          - name: DB_NAME
+            value: {{ .Values.dbName }}
+          - name: DB_USER_NAME
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Values.dbSecretName }}
+                key: mysqlUser
+          - name: DB_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Values.dbSecretName }}
+                key: mysqlPassword
+          - name: DB_HOST_NAME
+            value: {{ .Values.dbHostName }}
+          resources: {}
