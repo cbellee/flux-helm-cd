@@ -46,8 +46,8 @@ ingress:
     # kubernetes.io/tls-acme: "true"
   hosts:
     - host: go-team.local
-      paths: []
-  tls: []
+      #paths: []
+  #tls: []
 
 resources:
   limits:
