@@ -34,7 +34,7 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
       imagePullSecrets:
-      - name: {{ .Values.acrCredSecretName }}
+        - name: {{ .Values.acrCredSecretName }}
           env:
           - name: DB_NAME
             value: {{ .Values.dbName }}
