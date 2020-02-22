@@ -25,7 +25,7 @@ dbHostName: dev-go-team-mysql.mysql.database.azure.com
 dbSecretName: mysql-auth
 dbName: goteamdb
 
-acrCredSecretName: regcred
+acrCredSecretName: acrcred
 nameOverride: ""
 fullnameOverride: ""
 
