@@ -1,8 +1,0 @@
-apiVersion: v1
-data:
-  .dockerconfigjson: eyJhdXRocyI6eyJhY3JkOGYzNzQuYXp1cmVjci5pbyI6eyJ1c2VybmFtZSI6ImFjcmQ4ZjM3NCIsInBhc3N3b3JkIjoiNGovZTFLNnFDcEVDLzgyaGdJQnJWS2p1TFBGUXRsSlQiLCJlbWFpbCI6Im1lQGhvbWUubmV0IiwiYXV0aCI6IllXTnlaRGhtTXpjME9qUnFMMlV4U3paeFEzQkZReTg0TW1oblNVSnlWa3RxZFV4UVJsRjBiRXBVIn19fQ==
-kind: Secret
-metadata:
-  creationTimestamp: null
-  name: acrcred
-type: kubernetes.io/dockerconfigjson
