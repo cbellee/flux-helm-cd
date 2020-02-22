@@ -2,12 +2,12 @@
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ .Release.Name }}
+  name: {{ template "go-team.name" . }}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ .Release.Name }}
+    name: {{ template "go-team.name" . }}
   minReplicas: {{ .Values.replicaCount }}
   maxReplicas: {{ .Values.hpa.maxReplicas }}
   metrics:

@@ -1,17 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}
+  name: {{ template "go-team.fullname" . }}
   labels:
-    app: {{ .Release.Name }}
-    chart: {{ .Chart.Name }}
+    app: {{ template "go-team.name" . }}
+    chart: {{ template "go-team.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 spec:
+  {{- if not .Values.hpa.enabled }}
   replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
   selector:
     matchLabels:
-      app: {{ .Release.Name }}
+      app: {{ template "go-team.name" . }}
       release: {{ .Release.Name }}
   template:
     metadata:
@@ -20,7 +26,7 @@ spec:
           prometheus.io/path: '/metrics'
           prometheus.io/port: '8080'
       labels:
-        app: {{ .Release.Name }}
+        app: {{ template "go-team.name" . }}
         release: {{ .Release.Name }}
     spec:
       containers:
