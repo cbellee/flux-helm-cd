@@ -15,8 +15,8 @@ spec:
     ref: master
   values:
     image: 
-      repository: acrd8f374.azurecr.io/cbellee/go-team
-      tag: stg-0.1.0.2972
+      repository: belstarr/go-team
+      tag: stg-0.1.0.3000
     dbHostName: stg-go-team-mysql
     ingress:
       enabled: true
