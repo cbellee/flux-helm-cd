@@ -16,3 +16,5 @@ helm upgrade -i helm-operator fluxcd/helm-operator --wait \
 --set helm.versions=v3
 
 export FLUX_FORWARD_NAMESPACE=fluxcd
+
+fluxctl identity

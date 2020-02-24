@@ -3,8 +3,8 @@
 replicaCount: 1
 
 image: 
-  repository: acrd8f374.azurecr.io/cbellee/go-team
-  tag: dev-0.1.0.2972
+  repository: belstarr/go-team # acrd8f374.azurecr.io/cbellee/go-team
+  tag: dev-0.1.0.3000 # dev-0.1.0.2972
   pullPolicy: IfNotPresent
 
 service:
