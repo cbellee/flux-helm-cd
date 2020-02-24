@@ -1,0 +1,1 @@
+az aks update -n aks-e16bc6 -g dev-git-ops-rg --attach-acr acrd8f374
