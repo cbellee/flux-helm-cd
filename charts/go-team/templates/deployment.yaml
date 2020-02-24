@@ -33,10 +33,6 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-      {{- /*
- imagePullSecrets:
-        - name: {{ .Values.acrCredSecretName }}  
-*/ -}}
           env:
           - name: DB_NAME
             value: {{ .Values.dbName }}

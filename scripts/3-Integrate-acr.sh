@@ -1,1 +1,1 @@
-az aks update -n aks-e16bc6 -g dev-git-ops-rg --attach-acr acrd8f374
+az aks update -n aks-47fg73 -g git-ops-demo-rg --attach-acr acr4e2cb7
