@@ -25,4 +25,4 @@ spec:
       annotations:
         kubernetes.io/ingress.class: nginx
       hosts:
-        - host: go-team.kainiindustries.net
+      - host: go-team.kainiindustries.net
