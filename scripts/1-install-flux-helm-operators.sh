@@ -3,7 +3,7 @@ kubectl apply -f https://raw.githubusercontent.com/fluxcd/helm-operator/master/d
 
 kubectl apply -f ./namespaces/flux-namespace.yaml
 
-helm install flux fluxcd/flux --wait \
+helm upgrade -i flux fluxcd/flux --wait \
 --namespace fluxcd \
 --set git.url=git@github.com:cbellee/flux-helm-cd \
 --set git.path="clusters/dev" \
