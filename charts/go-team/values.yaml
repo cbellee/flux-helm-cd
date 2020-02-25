@@ -4,7 +4,7 @@ replicaCount: 1
 
 image: 
   repository: belstarr/go-team
-  tag: dev-0.1.0.3000
+  tag: dev-0.1.0.2972
   pullPolicy: IfNotPresent
 
 service:
