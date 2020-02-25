@@ -17,4 +17,6 @@ spec:
     image: 
       repository: belstarr/go-team
       tag: dev-0.1.0.2972
+    service:
+      name: dev-go-team-mysql.dev
     dbHostName: dev-go-team-mysql

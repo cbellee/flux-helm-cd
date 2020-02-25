@@ -8,6 +8,7 @@ image:
   pullPolicy: IfNotPresent
 
 service:
+  name: dev-go-team-mysql.dev
   type: ClusterIP
   externalPort: 9080
   containerPort: 8080

@@ -29,6 +29,15 @@ spec:
         app: {{ template "go-team.name" . }}
         release: {{ .Release.Name }}
     spec:
+      initContainers:
+        - name: "wait-for-services"
+          image: stevenaldinger/docker-k8s-wait-for-it
+          imagePullPolicy: Always
+          env:
+          - name: WAIT_FOR_IT
+            value: "true"
+          - name: WAIT_FOR_PODS
+            value: {{ .Values.service.name }}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
