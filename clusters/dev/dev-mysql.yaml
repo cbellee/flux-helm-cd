@@ -15,7 +15,7 @@ spec:
     version: 1.6.2
   values:
     ssl:
-    - enabled: false
+      enabled: false
   valuesFrom:
   - secretKeyRef:
       name: mysql-auth
