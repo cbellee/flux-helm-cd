@@ -16,7 +16,7 @@ spec:
   values:
     image: 
       repository: belstarr/go-team
-      tag: stg-0.1.0.3000
+      tag: stg-0.1.0.2972
     dbHostName: stg-go-team-mysql
     ingress:
       enabled: true

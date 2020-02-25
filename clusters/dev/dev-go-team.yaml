@@ -16,5 +16,5 @@ spec:
   values:
     image: 
       repository: belstarr/go-team
-      tag: dev-0.1.0.3000
+      tag: dev-0.1.0.2972
     dbHostName: dev-go-team-mysql
